@@ -114,6 +114,6 @@ var makeRESTUrl = (function() {
   };
 }());
 
-exports.makeUrl = makeRESTUrl;
+exports.make = makeRESTUrl;
 
 

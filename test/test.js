@@ -36,14 +36,14 @@ var restUrl = require('../rest-url.js');
 
 describe('rest-url', function() {
   it('should work', function() {
-    assert.equal("http://a/b", restUrl.makeUrl("http://:foo/:bar", {foo: "a", bar: "b"}), "should not add ?");
-    assert.equal("http://a%20b/b%2Fc", restUrl.makeUrl("http://:foo/:bar", {foo: "a b", bar: "b/c"}), "should escape");
+    assert.equal("http://a/b", restUrl.make("http://:foo/:bar", {foo: "a", bar: "b"}), "should not add ?");
+    assert.equal("http://a%20b/b%2Fc", restUrl.make("http://:foo/:bar", {foo: "a b", bar: "b/c"}), "should escape");
 
-    var url = restUrl.makeUrl("http://:foo/:bar", {foo: "a", bar: "b", moo: "c", bla: "d"});
+    var url = restUrl.make("http://:foo/:bar", {foo: "a", bar: "b", moo: "c", bla: "d"});
     assert.ok(
       url == "http://a/b?moo=c&bla=d" ||
       url == "http://a/b?bla=d&moo=c", "should add query");
 
-    assert.equal("http://a/b?m%20o=d%2Fe", restUrl.makeUrl("http://:foo/:bar", {foo: "a", bar: "b", "m o": "d/e"}), "should escape queries");
+    assert.equal("http://a/b?m%20o=d%2Fe", restUrl.make("http://:foo/:bar", {foo: "a", bar: "b", "m o": "d/e"}), "should escape queries");
   })
 });
