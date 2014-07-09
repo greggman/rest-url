@@ -45,5 +45,10 @@ describe('rest-url', function() {
       url == "http://a/b?bla=d&moo=c", "should add query");
 
     assert.equal("http://a/b?m%20o=d%2Fe", restUrl.make("http://:foo/:bar", {foo: "a", bar: "b", "m o": "d/e"}), "should escape queries");
+
+    var url = restUrl.make("http://someplace.com:8000/foo/bar", {http: "abc", "8000": "def"});
+    assert.ok(
+      url == "http://someplace.com:8000/foo/bar?http=abc&8000=def" ||
+      url == "http://someplace.com:8000/foo/bar?8000=def&http=abc", "should not replace http nor 8000");
   })
 });

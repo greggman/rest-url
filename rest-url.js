@@ -57,12 +57,12 @@ var url         = require('url');
  *        for that param.
  */
 var replaceRESTParams = (function() {
-  var restRE = /:(\w+)/g;
+  var restRE = /\/:(\w+)/g;
 
   return function(endpoint, params) {
     return endpoint.replace(restRE, function(match, key) {
       var value = params[key];
-      return (value !== undefined) ? encodeURIComponent(value) : (":" + key);
+      return "/" + ((value !== undefined) ? encodeURIComponent(value) : (":" + key));
     });
   };
 }());
@@ -93,7 +93,7 @@ var replaceRESTParams = (function() {
  * @param {string} the url
  */
 var makeRESTUrl = (function() {
-  var restRE = /:(\w+)/g;
+  var restRE = /\/:(\w+)/g;
 
   return function(endpoint, params) {
     // what params are in the endpoint
