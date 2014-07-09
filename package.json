@@ -1,0 +1,26 @@
+{
+  "name": "rest-url",
+  "version": "0.0.1",
+  "description": "Makes REST urls",
+  "main": "rest-url.js",
+  "scripts": {
+    "test": "node node_modules/mocha/bin/mocha --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:greggman/rest-url.git"
+  },
+  "keywords": [
+    "REST",
+    "url"
+  ],
+  "author": "Gregg Tavares",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/greggman/rest-url/issues"
+  },
+  "homepage": "https://github.com/greggman/rest-url",
+  "devDependencies": {
+    "mocha": "^1.20.1"
+  }
+}
