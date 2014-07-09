@@ -1,6 +1,6 @@
 {
   "name": "rest-url",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Makes REST urls",
   "main": "rest-url.js",
   "scripts": {
